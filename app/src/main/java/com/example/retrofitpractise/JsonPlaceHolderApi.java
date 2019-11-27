@@ -5,9 +5,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
-public interface GitHubClient {
-    @GET("/users/{user}/repo")
-    Call<List<GitHubRepo>> reposForUser(@Path("user") String user);
+public interface JsonPlaceHolderApi {
 
+    @GET("posts")
+    Call<List<Post>> getPost(@Query("userID") int userID);
 }
